@@ -11,8 +11,13 @@ body {
 }
 
 .computercard__container {
+  display : block;
   border: 3px solid purple;
   margin: 20px;
+}
+
+.computercard__container--hidden {
+  display: none;
 }
 
 .playercard__container {
@@ -25,5 +30,10 @@ body {
 }
 
 .attribute__button {
+  display: block;
   border: 2px solid red;
+}
+
+.attribute__button--hidden {
+  display: none;
 }

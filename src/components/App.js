@@ -17,8 +17,6 @@ class App extends React.Component {
     super();
 
     this.state = {
-      playerCounter : 0,
-      computerCounter : 0,
       length : "",
       crew : "",
       hyperdrive : "",
@@ -38,8 +36,8 @@ class App extends React.Component {
     this.receivePassengers = this.receivePassengers.bind(this);
     this.newPlayerCard = this.newPlayerCard.bind(this);
     this.newComputerCard = this.newComputerCard.bind(this);
-    this.increasePlayerCounter = this.increasePlayerCounter.bind(this);
-    this.increaseComputerCounter = this.increaseComputerCounter.bind(this);
+    // this.increasePlayerCounter = this.increasePlayerCounter.bind(this);
+    // this.increaseComputerCounter = this.increaseComputerCounter.bind(this);
     // this.randomise = this.randomise.bind(this);
   }
 
@@ -111,18 +109,6 @@ class App extends React.Component {
   //   })
   // });
   // }
-
-   increasePlayerCounter() {
-     this.setState ({
-       playerCounter : this.state.playerCounter+1
-     })
-   }
-
-   increaseComputerCounter() {
-     this.setState ({
-       computerCounter : this.state.computerCounter+1
-     })
-   }
 
 
   receiveLength(selectedAttribute) {

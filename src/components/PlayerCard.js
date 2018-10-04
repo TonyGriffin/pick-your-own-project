@@ -27,7 +27,7 @@ class PlayerCard extends React.Component {
           </li>
 
           <li>Hyperdrive Speed:  {this.props.hyperdrive}
-            <button className="attribute__button" name="hyperdrive" onClick={this.props.handleClick}>Select</button>
+            <button className="attribute__button" name="hyperdrive_rating" onClick={this.props.handleClick}>Select</button>
           </li>
 
         </ul>
