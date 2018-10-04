@@ -141,32 +141,9 @@ class App extends React.Component {
       <div className="app__container">
         <Cards playerCard={this.state.playerCard} computerCard={this.state.computerCard}
               playerCounter={this.state.playerCounter} computerCounter={this.state.computerCounter}
-            />
-
-        {/* <PlayerCard className="app__card__player" name="card__player"
-          playerOneCounter={this.state.playerOneCounter}
-          computerCounter={this.state.computerCounter}
-          length={this.state.length}
-          crew={this.state.crew}
-          hyperdrive={this.state.hyperdrive}
-          passengers={this.state.passengers}
-          cardArray={this.state.cardArray}
-          randomArray={this.state.randomArray}
-          playerArray={this.state.playerArray}
-          computerArray={this.state.computerArray}
-          receiveLength={this.receiveLength}
-          receiveCrew={this.receiveCrew}
-          receiveHyperdrive={this.receiveHyperdrive}
-          receivePassengers={this.receivePassengers} /> */}
-
-          {/* <Counter  name="counter__player"
-            playerOneCounter={this.state.playerOneCounter}
-            computerCounter={this.state.computerCounter} /> */}
-
-            {/* <ComputerCard className="app__card__computer" name="card__computer"/> */}
-            {/* <Counter className="app__counter__computer" name="counter__computer" /> */}
-
-          </div>
+              newFetch={this.getAttributesFetch}
+        />
+      </div>
         )
       }
     }

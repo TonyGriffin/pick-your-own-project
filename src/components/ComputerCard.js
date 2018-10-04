@@ -12,7 +12,7 @@ class ComputerCard extends React.Component {
     return (
       <div className="card__list">
         <ul className="card__ul">
-          <p>Starship Name:  {this.props.name}</p>
+          <p className="computercard__shipname">Starship Name:{this.props.name}</p>
           <li>Length:  {this.props.length}</li>
           <li>Crew:  {this.props.crew}</li>
           <li>Passenger Capacity :  {this.props.passengers}</li>

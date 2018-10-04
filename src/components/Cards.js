@@ -11,13 +11,15 @@ class Cards extends React.Component {
     this.state = {
       playerCounter : 0,
       computerCounter : 0,
-      playerTurn : true
+      playerTurn : true,
+      outcome : null
     }
 
     this.handleClick = this.handleClick.bind(this);
     this.increasePlayerCounter = this.increasePlayerCounter.bind(this);
     this.increaseComputerCounter = this.increaseComputerCounter.bind(this);
     this.compareAttributes = this.compareAttributes.bind(this);
+    this.handleNextRound = this.handleNextRound.bind(this);
   }
 
 
@@ -27,22 +29,34 @@ class Cards extends React.Component {
     const computerAttribute = this.props.computerCard[event.target.name];
     console.log(playerAttribute);
     console.log(computerAttribute);
-    this.compareAttributes(playerAttribute, computerAttribute);
+    const outcome = this.compareAttributes(playerAttribute, computerAttribute);
     this.setState( {
+      outcome,
       playerTurn : !this.state.playerTurn
-    }, () => console.log(this.state.playerTurn) )
+    }, () => console.log(this.state) )
+
+  }
+
+  //NEW FETCH CALL AFTER YOU PRESS THE NEXT ROUND BUTTON
+  handleNextRound (){
+    this.setState({
+      outcome : null
+    }, () => this.props.newFetch() )
   }
 
 
 
   compareAttributes(a, b) {
+  while ((this.state.playerCounter+this.state.computerCounter) <= 5)
   if (Number(a) >= Number(b))  {
      this.increasePlayerCounter()
      console.log(this.state.playerCounter)
+     return "You Won This Round!";
   }
    else {
     this.increaseComputerCounter()
     console.log(this.state.computerCounter)
+    return "You lost This Round!";
    }
   }
 
@@ -66,9 +80,6 @@ class Cards extends React.Component {
 
     const classes = cx(
       'computercard__container', {'computercard__container--hidden': this.state.playerTurn})
-    //   ,
-    //   'attribute__button', {'attribute__button--hidden' : !this.state.playerTurn}
-    // )
 
     return (
       <div className="cards__container">
@@ -83,6 +94,7 @@ class Cards extends React.Component {
           />
           <p>{this.state.playerCounter}</p>
        </div>
+       {this.state.outcome && <div>{this.state.outcome} <button onClick={this.handleNextRound} className="nextround__button">Next Round!</button></div>}
 
         <div className={classes}>
           <ComputerCard className="playercard__instance"
@@ -93,6 +105,7 @@ class Cards extends React.Component {
           />
           <p>{this.state.computerCounter}</p>
         </div>
+
 
 
       </div>);

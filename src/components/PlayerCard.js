@@ -1,6 +1,6 @@
 import React from 'react';
 import Gif from "./Gif";
-import Attribute from "./Attribute";
+import Counter from "./Counter";
 
 class PlayerCard extends React.Component {
 
@@ -12,7 +12,7 @@ class PlayerCard extends React.Component {
     return (
       <div className="card__list">
         <ul className="card__ul">
-          <p>Starship Name:  {this.props.name}</p>
+          <p className="playercard__shipname">Starship Name:{this.props.name}</p>
 
           <li>Length:  {this.props.length}
             <button className="attribute__button" name="length" onClick={this.props.handleClick}>Select</button>

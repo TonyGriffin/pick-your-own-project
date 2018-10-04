@@ -1,9 +1,38 @@
 body {
-  background-color: Cornsilk;
+  background-color: black;
+  // background-image: image("StarWars.jpg");
+  // font-family: "Starjhol";
+  // src: url(/Users/tonygriffin/workspace/pick-your-own-project/src/components/boba-fonts_star-jedi/Starjhol.ttf);
+  // background-image: url("StarWars.png");
+  // background-image: image(/Users/tonygriffin/workspace/pick-your-own-project/StarWars.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height:100%;
+  color: white;
 }
 
 .card__ul {
   background-color: lightblue;
+
+}
+
+.playercard__shipname {
+  margin: auto;
+  // align-items: center;
+  // align-self: center;
+  // align-content: center;
+}
+
+.computercard__shipname {
+  margin: auto;
+  // align-items: center;
+  // align-self: center;
+  // align-content: center;
+}
+
+.app__container {
+  background-color: rgb(192,192,192);
 }
 
 .counter__container {
@@ -12,6 +41,8 @@ body {
 
 .computercard__container {
   display : block;
+  position: relative;
+  background-color: rgb(192,192,192);
   border: 3px solid purple;
   margin: 20px;
 }
@@ -22,11 +53,15 @@ body {
 
 .playercard__container {
   border: 3px solid green;
+  background-color: rgb(192,192,192);
   margin: 20px;
 }
 
 .cards__container {
   display : flex;
+  position: fixed;
+  background-color: black;
+  margin-top: 100px;
 }
 
 .attribute__button {
@@ -34,6 +69,7 @@ body {
   border: 2px solid red;
 }
 
-.attribute__button--hidden {
-  display: none;
+.nextround__button {
+  display: block;
+  border: 4px solid white;
 }
