@@ -15,6 +15,7 @@ class Counter extends React.Component {
     return (
       <div className="counter__container">
         <p>Your Current Score is:</p>
+
       </div>
     )
   }

@@ -11,8 +11,8 @@ class PlayerCard extends React.Component {
   render(){
     return (
       <div className="card__list">
-        <ul className="card__ul">
-          <p className="playercard__shipname">Starship Name:{this.props.name}</p>
+        {/* <ul className="card__ul"> */}
+          <p className="card__shipname">Starship Name:{this.props.name}</p>
 
           <li>Length:  {this.props.length}
             <button className="attribute__button" name="length" onClick={this.props.handleClick}>Select</button>
@@ -30,7 +30,7 @@ class PlayerCard extends React.Component {
             <button className="attribute__button" name="hyperdrive_rating" onClick={this.props.handleClick}>Select</button>
           </li>
 
-        </ul>
+        {/* </ul> */}
       </div>
     )
   }

@@ -3,6 +3,8 @@ import PlayerCard from './PlayerCard';
 import ComputerCard from './ComputerCard';
 import cx from 'classnames';
 
+const starwarsApi = 'https://api.giphy.com/v1/gifs/search?api_key=ggvo0rd0F3430o7HlYXGh2ZwXzPMx0f9&q=star wars yoda&limit=25&offset=0&rating=G&lang=en'
+
 class Cards extends React.Component {
 
   constructor() {
@@ -12,7 +14,9 @@ class Cards extends React.Component {
       playerCounter : 0,
       computerCounter : 0,
       playerTurn : true,
-      outcome : null
+      outcome : null,
+      playerRemainingCards : 5,
+      ComputerRemainingCards : 5
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -48,17 +52,17 @@ class Cards extends React.Component {
 
 
   compareAttributes(a, b) {
-  while ((this.state.playerCounter+this.state.computerCounter) <= 5)
-  if (Number(a) >= Number(b))  {
-     this.increasePlayerCounter()
-     console.log(this.state.playerCounter)
-     return "The Force is Strong In You....You Won This Round!";
-  }
-   else {
-    this.increaseComputerCounter()
-    console.log(this.state.computerCounter)
-    return "The Darkside Is Too Powerful Here...You lost This Round!";
-   }
+    while ((this.state.playerCounter+this.state.computerCounter) <= 5)
+    if (Number(a) >= Number(b))  {
+      this.increasePlayerCounter()
+      console.log(this.state.playerCounter)
+      return "The Force is Strong In You....You Won This Round!";
+    }
+    else {
+      this.increaseComputerCounter()
+      console.log(this.state.computerCounter)
+      return "The Darkside Is Too Powerful...You lost This Round!";
+    }
   }
 
 
@@ -82,35 +86,40 @@ class Cards extends React.Component {
     const classes = cx(
       'computercard__container', {'computercard__container--hidden': this.state.playerTurn})
 
-    return (
-      <div className="cards__container">
+      return (
+        <div className="cards__container">
 
-        <div className="playercard__container">
-          <PlayerCard className="playercard__instance"
-            handleClick={this.handleClick}
-            length={this.props.playerCard.length}
-            crew={this.props.playerCard.crew} hyperdrive={this.props.playerCard.hyperdrive_rating}
-            passengers={this.props.playerCard.passengers} shipItem={this.props.playerCard}
-            name={this.props.playerCard.name}
-          />
-          <p className="counters__text" >Player Counter: {this.state.playerCounter}</p>
-       </div>
-       {this.state.outcome && <div>{this.state.outcome} <button onClick={this.handleNextRound} className="nextround__button">Next Round!</button></div>}
-
-        <div className={classes}>
-          <ComputerCard className="playercard__instance"
-            length={this.props.computerCard.length}
-            crew={this.props.computerCard.crew} hyperdrive={this.props.computerCard.hyperdrive_rating}
-            passengers={this.props.computerCard.passengers} shipItem={this.props.computerCard}
-          name={this.props.computerCard.name}
-          />
-          <p className="counters__text" >Computer Counter: {this.state.computerCounter}</p>
-        </div>
+          <div className="playercard__container">
+            <PlayerCard className="playercard__instance"
+              handleClick={this.handleClick}
+              length={this.props.playerCard.length}
+              crew={this.props.playerCard.crew} hyperdrive={this.props.playerCard.hyperdrive_rating}
+              passengers={this.props.playerCard.passengers} shipItem={this.props.playerCard}
+              name={this.props.playerCard.name}
+            />
+            <p className="counters__text" >Player Counter: {this.state.playerCounter}</p>
+          </div>
 
 
 
-      </div>);
+          {this.state.outcome && <div className="nextround__button__div">{this.state.outcome} <button onClick={this.handleNextRound} className="nextround__button">Next Round!</button></div>}
+
+          <div className={classes}>
+            <ComputerCard className="computercard__instance"
+              length={this.props.computerCard.length}
+              crew={this.props.computerCard.crew} hyperdrive={this.props.computerCard.hyperdrive_rating}
+              passengers={this.props.computerCard.passengers} shipItem={this.props.computerCard}
+              name={this.props.computerCard.name}
+            />
+            <p className="counters__text" >Computer Counter: {this.state.computerCounter}</p>
+          </div>
+
+
+
+
+
+        </div>);
+      }
     }
-  }
 
-  export default Cards;
+    export default Cards;

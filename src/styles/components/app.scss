@@ -9,47 +9,37 @@ html {
 }
 
 body {
-
   color: white;
 }
 
-.card__ul {
-  background-color: lightblue;
-
+li {
+  list-style: none;
 }
 
-.playercard__shipname {
+.card__shipname {
   margin: auto;
-  // align-items: center;
-  // align-self: center;
-  // align-content: center;
-}
-
-.computercard__shipname {
-  margin: auto;
-  // align-items: center;
-  // align-self: center;
-  // align-content: center;
-}
-
-.app__container {
-  background-color: rgb(192,192,192);
-}
-
-.counter__container {
-  background-color: red;
+  background: rgba(112,128,144,0.8);
+  text-decoration: underline;
 }
 
 .counters__text {
   color: red;
+  text-decoration: underline;
+  background: rgba(112,128,144,0.9);
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .computercard__container {
-  display : block;
-  position: relative;
-  background-color: rgb(192,192,192);
-  border: 3px solid purple;
-  margin: 20px;
+  display : flex;
+  flex-direction: column;
+  background: url(/Users/tonygriffin/workspace/pick-your-own-project/src/components/StarWarsStarsBG.png);
+  border: 3px solid rgba(112,128,144,0.8);
+  border-radius: 40px;
+  padding: 20px;
+  margin-left: 30px;
+  // margin-top: 30px;
+  color : white;
 }
 
 .computercard__container--hidden {
@@ -57,16 +47,26 @@ body {
 }
 
 .playercard__container {
-  border: 3px solid green;
-  background-color: rgb(192,192,192);
-  margin: 20px;
+  border: 3px solid rgba(112,128,144,0.8);
+  border-radius: 40px;
+  padding: 20px;
+  background: url(/Users/tonygriffin/workspace/pick-your-own-project/src/components/StarWarsStarsBG.png);
+  margin-right: 30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color : white;
 }
 
 .cards__container {
   display : flex;
-  position: fixed;
   background-color: black;
-  margin-top: 100px;
+  background: url(/Users/tonygriffin/workspace/pick-your-own-project/src/components/SWCardBG.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 400px;
+  justify-content: center;
+  align-items: center;
 }
 
 .attribute__button {
@@ -74,7 +74,22 @@ body {
   border: 2px solid red;
 }
 
+.nextround__button__div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(112,128,144,0.8);
+  border: 2px solid white;
+  border-radius: 40px;
+  padding: 10px;
+  text-decoration: underline;
+}
+
 .nextround__button {
-  display: block;
+  // display: block;
+  max-width: 100px;
+  max-height: 100px;
   border: 4px solid white;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }

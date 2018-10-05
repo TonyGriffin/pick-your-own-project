@@ -11,13 +11,13 @@ class ComputerCard extends React.Component {
   render(){
     return (
       <div className="card__list">
-        <ul className="card__ul">
-          <p className="computercard__shipname">Starship Name:{this.props.name}</p>
+        {/* <ul className="card__ul"> */}
+          <p className="card__shipname">Starship Name:{this.props.name}</p>
           <li>Length:  {this.props.length}</li>
           <li>Crew:  {this.props.crew}</li>
           <li>Passenger Capacity :  {this.props.passengers}</li>
           <li>Hyperdrive Speed:  {this.props.hyperdrive}</li>
-        </ul>
+        {/* </ul> */}
       </div>
     )
   }
