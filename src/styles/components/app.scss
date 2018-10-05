@@ -1,14 +1,15 @@
-body {
+html {
   background-color: black;
-  // background-image: image("StarWars.jpg");
-  // font-family: "Starjhol";
-  // src: url(/Users/tonygriffin/workspace/pick-your-own-project/src/components/boba-fonts_star-jedi/Starjhol.ttf);
-  // background-image: url("StarWars.png");
-  // background-image: image(/Users/tonygriffin/workspace/pick-your-own-project/StarWars.jpg);
+  background: url(/Users/tonygriffin/workspace/pick-your-own-project/src/components/StarWars.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height:100%;
+  width: 100%;
+}
+
+body {
+
   color: white;
 }
 
@@ -37,6 +38,10 @@ body {
 
 .counter__container {
   background-color: red;
+}
+
+.counters__text {
+  color: red;
 }
 
 .computercard__container {

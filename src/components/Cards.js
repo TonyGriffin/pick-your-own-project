@@ -40,7 +40,8 @@ class Cards extends React.Component {
   //NEW FETCH CALL AFTER YOU PRESS THE NEXT ROUND BUTTON
   handleNextRound (){
     this.setState({
-      outcome : null
+      outcome : null,
+      playerTurn : true
     }, () => this.props.newFetch() )
   }
 
@@ -51,12 +52,12 @@ class Cards extends React.Component {
   if (Number(a) >= Number(b))  {
      this.increasePlayerCounter()
      console.log(this.state.playerCounter)
-     return "You Won This Round!";
+     return "The Force is Strong In You....You Won This Round!";
   }
    else {
     this.increaseComputerCounter()
     console.log(this.state.computerCounter)
-    return "You lost This Round!";
+    return "The Darkside Is Too Powerful Here...You lost This Round!";
    }
   }
 
@@ -92,7 +93,7 @@ class Cards extends React.Component {
             passengers={this.props.playerCard.passengers} shipItem={this.props.playerCard}
             name={this.props.playerCard.name}
           />
-          <p>{this.state.playerCounter}</p>
+          <p className="counters__text" >Player Counter: {this.state.playerCounter}</p>
        </div>
        {this.state.outcome && <div>{this.state.outcome} <button onClick={this.handleNextRound} className="nextround__button">Next Round!</button></div>}
 
@@ -103,7 +104,7 @@ class Cards extends React.Component {
             passengers={this.props.computerCard.passengers} shipItem={this.props.computerCard}
           name={this.props.computerCard.name}
           />
-          <p>{this.state.computerCounter}</p>
+          <p className="counters__text" >Computer Counter: {this.state.computerCounter}</p>
         </div>
 
 
